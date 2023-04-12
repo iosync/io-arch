@@ -88,7 +88,7 @@ sudo systemctl start lightdm
 ## CONFIGURACIONES ADICIONALES
 
 
-> Nota: `localectl set-x11-keymap es` cambia la configuracion del teclado a es.
+> Nota: `localectl set-x11-keymap es` cambia la configuracion del teclado a Español.
 
  
 
