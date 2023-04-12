@@ -82,7 +82,6 @@ fi
 sleep 2
 
 
-echo -e "$CNT - La Instalacion del Script ha Finalizado!\n\n"
 
 
 ### Instalacion de Drivers de Video ###
@@ -103,11 +102,13 @@ do
             sudo pacman -S xf86-video-intel
             break
         ;;
-        *) echo "$CWR - Omitiendo la instalacion de Drivers"
+        *) 
+            echo -e "$CWR - Omitiendo la instalacion de Drivers"
             break
         ;;
     esac
 done
+echo -e "$CNT - La Instalacion del Script ha Finalizado!\n\n"
 
 ###  OpenSource  ###
 # sudo pacman -S xf86-video-nouveau mesa
