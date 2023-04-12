@@ -105,7 +105,7 @@ Para establecer  la pantalla con las medidas de la resolucion adecuada
 xrandr --output NOMBRE_PANTALLA --mode nombre_resolución
 #para deshabilitar una pantalla xrandr --output NOMBRE_PANTALLA --off --output NOMBRE_PANTALLA2 --mode nombre_resolución
 ```
-Para agregarlo para que se ejecute cada inicion modificar
+Para agregarlo para que se ejecute cada inicio del sistema, modificar:
 ```bash
 nano ~/.config/i3/config
 
