@@ -88,10 +88,9 @@ sudo systemctl start lightdm
 ## CONFIGURACIONES ADICIONALES
 
 
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
+> Notaa: `localectl set-x11-keymap es` cambia la configuracion del teclado a es.
 
-Verify the deployment by navigating to your server address in
-your preferred browser.
+ 
 
 
 
