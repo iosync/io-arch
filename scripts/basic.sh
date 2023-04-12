@@ -59,11 +59,9 @@ sleep 2
 ### Instalacion del repositorio de BlackArch ###
 read -n1 -rep $'[\e[1;33mACCION\e[0m] - Quieres instalar el Repositorio de BlackArch (s,n) ' INSTBARCH
 if [[ $INSTBARCH == "S" || $INSTBARCH == "s" ]]; then
-    cd /tmp
     curl -O https://blackarch.org/strap.sh
     chmod +x strap.sh
     ./strap.sh
-    cd ..
     
 else
     echo -e "$CWR - Omitiendo la instalacion del Repositorio de BlackArch"
@@ -103,7 +101,6 @@ do
             break
         ;;
         *) 
-            echo -e "$CWR - Omitiendo la instalacion de Drivers"
             break
         ;;
     esac
