@@ -91,10 +91,27 @@ sudo systemctl start lightdm
 > Nota: `localectl set-x11-keymap es` cambia la configuracion del teclado a Español.
 
  
+Para ejecutar el comando xrandr con las medidas adecuadas desde i3wm
+Mostrar las pantallas y resoluciones disponibles
 
+```bash
+xrandr --listmonitors
+xrandr
+```
 
+Para establecer  la pantalla con las medidas de la resolucion adecuada
 
+```bash
+xrandr --output NOMBRE_PANTALLA --mode nombre_resolución
+#para deshabilitar una pantalla xrandr --output NOMBRE_PANTALLA --off --output NOMBRE_PANTALLA2 --mode nombre_resolución
+```
+Para agregarlo para que se ejecute cada inicion modificar
+```bash
+nano ~/.config/i3/config
 
+exec --no-startup-id xrandr --output NOMBRE_PANTALLA --mode nombre_resolución
+
+```
 
 ## License
 
