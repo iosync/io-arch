@@ -101,6 +101,7 @@ do
             break
         ;;
         *) 
+            echo -e "$CWR - Omitiendo la instalacion de Drivers de video"
             break
         ;;
     esac
