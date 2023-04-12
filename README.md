@@ -83,7 +83,7 @@ sudo systemctl enable lightdm
 sudo systemctl start lightdm
 ```
 
-
+ 
 
 ## CONFIGURACIONES ADICIONALES
 
