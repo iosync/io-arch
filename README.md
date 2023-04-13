@@ -71,7 +71,7 @@ makepkg -si
 #### Instalacion de BlackArch
 
 ```sh
-cd ~/tmp
+cd /tmp
 curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
