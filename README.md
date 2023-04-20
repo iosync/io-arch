@@ -14,7 +14,7 @@ pacman -S xorg xorg-xinit xorg-xinput
 ### Interfaz Grafica
 
 ```sh
-sudo pacman -S i3-gaps i3blocks i3status
+sudo pacman -S i3-gaps i3blocks # or i3status
 ```
 - [i3-gaps]	Gestor de ventanas muy ligero y altamente configurable.
 - [i3blocks]	Sistema de barras de estado para el gestor de ventanas i3.

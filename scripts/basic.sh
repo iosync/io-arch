@@ -27,26 +27,13 @@ echo -ne "
 "
 
 
-
-
-sleep 2
-
-read -n1 -rep $'[\e[1;33mACCION\e[0m] - Quieres Continuar con la instalacion (s,n) ' INST
-if [[ $INST == "S" || $INST == "s" ]]; then
-    echo -e "$COK - Iniciando la Instalacion del Script.."
-else
-    echo -e "$CNT - Saliendo del Script, no se hicieron cambios en su sistema."
-    exit
-fi
-
-
 sleep 2
 
 ### Instalacion de YAY ###
 
 read -n1 -rep $'[\e[1;33mACCION\e[0m] - Quieres instalar YAY (s,n) ' INSTYAY
 if [[ $INSTYAY == "S" || $INSTYAY == "s" ]]; then
-    git clone https://aur.archlinux.org/yay-git.git &>> $INSTLOG
+    git clone https://aur.archlinux.org/yay.git &>> $INSTLOG
     cd yay-git
     makepkg -si --noconfirm &>> ../$INSTLOG
     cd ..
@@ -56,17 +43,7 @@ else
 fi
 
 sleep 2
-### Instalacion del repositorio de BlackArch ###
-read -n1 -rep $'[\e[1;33mACCION\e[0m] - Quieres instalar el Repositorio de BlackArch (s,n) ' INSTBARCH
-if [[ $INSTBARCH == "S" || $INSTBARCH == "s" ]]; then
-    curl -O https://blackarch.org/strap.sh
-    chmod +x strap.sh
-    ./strap.sh
-    
-else
-    echo -e "$CWR - Omitiendo la instalacion del Repositorio de BlackArch"
-fi
-
+ 
 ### Instalacion de componentes de xorg ###
 
 read -n1 -rep $'[\e[1;33mACCION\e[0m] - Quieres instalar Instalando Componentes de Xorg?" (s,n) ' INSTXORG
