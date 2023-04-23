@@ -130,3 +130,11 @@ sudo mkinitcpio -p linux-lts
 lspci -k | grep -A 2 -E "(VGA|3D)"
 
 ```
+
+
+
+Quitar permisos de ejecucion sin perder otras propiedades:
+
+```bash 
+chmod -R -a -x destino/
+```

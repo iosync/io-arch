@@ -42,7 +42,7 @@ pacstrap /mnt base base-devel linux linux-firmware linux-headers linux-lts netwo
 ```
 
 ```shell
-genfstb -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ### Login with root 
@@ -59,7 +59,7 @@ locale-gen
 echo LANG=es_ES.UTF-8 > /etc/locale.conf
 # symbolic link
 # Alternatively timedatectl list-timezones | grep Zurich
-ln -s /usr/share/zoneinfo/#zone1/#zone2 /etc/localtime
+ln -s /usr/share/zoneinfo/Zone1/Zone_2 /etc/localtime
 
 # set keyboard lang: es, us, en, fr, la-latin1
 echo KEYMAP=es > /etc/vconsole.conf
@@ -67,8 +67,8 @@ echo KEYMAP=es > /etc/vconsole.conf
 ```
 ### Grub
 ```shell
- 
-grub-mkconfig -o /boot/efi/grub/grub.cfg
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+grub-mkconfig -o /boot/grub/grub.cfg
 #optional configure video resolution
 nano /etc/default/grub
 # and setting video=1920x1080:
@@ -99,7 +99,7 @@ reboot
 
 ### Optional user add
 ```shell
-useradd -m user -s /bin/bash
+useradd -m user #-s /bin/bash
 passwd user
 nano /etc/sudoers
 ```
