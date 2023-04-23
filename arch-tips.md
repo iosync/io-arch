@@ -141,6 +141,7 @@ chmod -R -a -x destino/
 ### Copiar solo archivos con extension , con rsync
 
 ```shell
+rsync -avhP /origen/ /destino/ 
 rsync -av --progress --partial --include="*.docx" --include="*.mkv" --exclude="*" ./ /ruta/a/la/raiz/de/tu/USB/
 ```
 
