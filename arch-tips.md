@@ -138,3 +138,47 @@ Quitar permisos de ejecucion sin perder otras propiedades:
 ```bash 
 chmod -R -a -x destino/
 ```
+### Copiar solo archivos con extension , con rsync
+
+```shell
+rsync -av --progress --partial --include="*.docx" --include="*.mkv" --exclude="*" ./ /ruta/a/la/raiz/de/tu/USB/
+```
+
+### UFW (Uncomplicated Firewall) 
+```shell
+#Instalar UFW: 
+sudo pacman -S ufw
+#Habilitar UFW en el arranque: 
+sudo systemctl enable ufw  
+sudo systemctl start ufw
+#Configurar las reglas de firewall: 
+sudo ufw default allow
+#Para denegar todo el tráfico entrante y permitir todo el tráfico saliente: 
+sudo ufw default deny incoming
+sudo ufw default allow outgoing 
+#Para permitir tráfico en un puerto específico, por ejemplo, el puerto 80 para HTTP, se puede utilizar el siguiente comando:
+ 
+sudo ufw allow 80/tcp
+#Para permitir el tráfico en un rango de puertos, por ejemplo, del puerto 1000 al 2000, se puede utilizar el siguiente comando:
+ 
+sudo ufw allow 1000:2000/tcp
+#Para permitir el tráfico desde una dirección IP específica, por ejemplo, la dirección IP 192.168.1.100, se puede utilizar el siguiente comando:
+ 
+sudo ufw allow from 192.168.1.100
+#Para permitir el tráfico de un protocolo específico, por ejemplo, el protocolo ICMP para ping, se puede utilizar el siguiente comando:
+ 
+sudo ufw allow icmp
+#Para denegar tráfico en un puerto específico, por ejemplo, el puerto 22 para SSH, se puede utilizar el siguiente comando:
+ 
+sudo ufw deny 22/tcp
+#Comprobar las reglas de firewall:
+#Una vez definidas las reglas de firewall, es recomendable comprobarlas para asegurarse de que se han aplicado correctamente. Para comprobar las reglas de firewall, se puede utilizar el siguiente comando:
+ 
+sudo ufw status verbose
+#Este comando mostrará todas las reglas de firewall activas y su estado actual.
+
+#Desactivar UFW:
+#Si es necesario desactivar UFW, se puede utilizar el siguiente comando:
+ 
+sudo ufw disable 
+```
