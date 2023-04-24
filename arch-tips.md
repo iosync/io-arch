@@ -183,3 +183,16 @@ sudo ufw status verbose
  
 sudo ufw disable 
 ```
+
+
+
+```bash
+sudo pacman -S gparted
+ 
+sudo nano /etc/default/grub
+GRUB_DISABLE_OS_PROBER=false 
+
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+```
