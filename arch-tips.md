@@ -185,7 +185,7 @@ sudo ufw disable
 ```
 
 
-
+## DualBoot
 ```bash
 sudo pacman -S gparted
  
