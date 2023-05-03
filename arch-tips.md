@@ -196,3 +196,38 @@ GRUB_DISABLE_OS_PROBER=false
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+### Touchpad en laptop
+```shell
+sudo pacman -S xf86-input-libinput
+
+```
+
+### Pipewire Audio
+```shell
+sudo pacman -S pipewire pipewire-audio gst-plugin-pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-roc wireplumber realtime-privileges
+# Activate
+sudo systemctl enable --now pipewire.service
+
+```
+
+### Install KVM, QEMU and Virt Manager
+```shell
+sudo pacman -Syy
+sudo pacman -S archlinux-keyring
+sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat
+#
+sudo pacman -S ebtables iptables
+# libguestfs is a set of tools used to access and modify virtual machine (VM) disk images.
+sudo pacman -S libguestfs
+# Start KVM libvirt service
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+```
+
+### Bluetooth
+
+```shell
+pacman -S bluez bluez-utils pulseaudio-bluetooth
+# enable
+systemctl enable bluetooth
+```
