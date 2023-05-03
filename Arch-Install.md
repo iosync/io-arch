@@ -108,7 +108,7 @@ useradd -m user #-s /bin/bash
 passwd user
 nano /etc/sudoers
 ```
-### Add Network Manager
+###  Network Manager Enable
 ```shell
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
@@ -121,11 +121,11 @@ sudo pacman -S reflector rsync
 sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
-# Directorios de Usuarios 
+# Directory structure: Desktop, Documents, Pictures
 ```shell 
 pacman -S xdg-user-dirs
 ```
-### Instalar el Repositorio de BlackArch
+### BlackArch
 ```shell
 cd /tmp
 curl -O https://blackarch.org/strap.sh
