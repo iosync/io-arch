@@ -1,5 +1,5 @@
 
-## Para cambiar el idioma del teclado en i3wm en Arch Linux
+## Para cambiar el idioma del teclado en i3wm term en Arch Linux
 ```bash
 localectl list-x11-keymap-layouts
 localectl set-x11-keymap <código-de-idioma>
@@ -7,7 +7,7 @@ sudo localectl set-x11-keymap es,us
 ```
 
  
-### Tip para usar la ultima ruta (!S) [Argumento]
+### Tip para usar la ultima ruta (!$) [Argumento]
 ```bash
 git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks
 cd !$
@@ -20,7 +20,7 @@ cd !$
 ```shell
 sudo pacman -S man-pages
 ```
-### uso de grep para abrir picom con vim usando locate,vim y picom instalado 
+### uso de grep para abrir picom con vim usando locate,vim y picom instalados 
 ```shell
 locate picom | grep "/home/io/picom.conf" | xargs vim
 locate picom | grep "picom.conf" | head -n 1 | xargs vim # Muestra la primera linea
@@ -42,14 +42,7 @@ sudo pacman -S virtualbox virtualbox-host-dkms virtualbox-ext-oracle
 yay -S virtualbox virtualbox-host-dkms virtualbox-ext-oracle
 ```
 
-### Sonido,Usando pipewire: Conf pamix
-```shell
-sudo pacman -S pipewire pipewire-alsa pipewire-jack pipewire-pulse
-# sudo pacman -S alsa-utils pavucontrol alsa-plugins pulseaudio-alsa
-
-# sudo systemctl enable --now pipewire.service pipewire.socket
-# sudo systemctl enable --now pipewire-pulse.service pipewire-pulse.socket
-```
+ 
 ### Establecer el Fondo de pantalla y elegir pantalla usando xrandr, feh
 ```shell
 # Resolucion de pantalla
@@ -133,7 +126,7 @@ lspci -k | grep -A 2 -E "(VGA|3D)"
 
 
 
-Quitar permisos de ejecucion sin perder otras propiedades:
+### Quitar permisos de ejecucion sin perder otras propiedades:
 
 ```bash 
 chmod -R -a -x destino/
