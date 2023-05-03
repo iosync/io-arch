@@ -14,7 +14,7 @@ pacman -S xorg xorg-xinit xorg-xinput
 ### Interfaz Grafica
 
 ```sh
-sudo pacman -S i3-gaps i3blocks # or i3status
+sudo pacman -S i3-gaps i3status # or i3blocks
 ```
 - [i3-gaps]	Gestor de ventanas muy ligero y altamente configurable.
 - [i3blocks]	Sistema de barras de estado para el gestor de ventanas i3.
@@ -29,7 +29,7 @@ lspci | grep -e VGA
 - Tarjetas NVIDIA: 
 ```sh
 sudo pacman -S nvidia
-# sudo pacman -S xf86-video-nouveau mesa
+# sudo pacman -S xf86-video-nouveau mesa 
 ```
 
 - Tarjetas AMD: 
