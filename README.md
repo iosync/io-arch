@@ -20,28 +20,6 @@ sudo pacman -S i3-gaps i3status # or i3blocks
 - [i3blocks]	Sistema de barras de estado para el gestor de ventanas i3.
 - [i3status]	Programa de estado de sistema para el gestor de ventanas i3.
 
-#### Drivers de Video
-
-Para Revisar el Grafica
-```sh
-lspci | grep -e VGA
-```
-- Tarjetas NVIDIA: 
-```sh
-sudo pacman -S nvidia
-# sudo pacman -S xf86-video-nouveau mesa 
-```
-
-- Tarjetas AMD: 
-```sh
-sudo pacman -S mesa
-```
-- Tarjetas Intel: Si tienes una tarjeta gráfica integrada Intel, los controladores suelen venir incluidos en el kernel de Linux. Por lo tanto, no deberías tener problemas para utilizar tu tarjeta gráfica.
-```sh
-sudo pacman -S xf86-video-intel
-```
-- En general, si tienes una tarjeta gráfica moderna, lo más recomendable es que utilices los controladores de código abierto incluidos en el kernel de Linux o en el paquete mesa.
-
 
 ### Herramientas Adicionales
 ```sh
@@ -56,6 +34,12 @@ sudo pacman -S lightdm rofi feh dunst picom dmenu lightdm-gtk-greeter kitty
 - [lightdm-gtk-greeter]	Tema para el gestor de inicio de sesión LightDM.
 - [kitty]	Emulador de terminal que permite la configuración avanzada.
 
+### Lightdm: para habilitar y ejecutar
+
+```sh
+sudo systemctl enable lightdm
+sudo systemctl start lightdm
+```
 ### Instalacion de Yay
 ```sh
 git clone https://aur.archlinux.org/yay.git
@@ -75,12 +59,6 @@ cd /tmp
 curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
-```
-### Lightdm: para habilitar y ejecutar
-
-```sh
-sudo systemctl enable lightdm
-sudo systemctl start lightdm
 ```
 
  
