@@ -2,15 +2,18 @@
 
 ```shell
 ls /sys/firmware/efi/efivars
-loadkeys
+localectl list-keymaps
+# ejemplo de teclado en español es
+loadkeys es
 timedatectl set-ntp true
 ``` 
 ### Network Configuration/wifi
 ```shell  
 
 iwlist wlan0 scan
-# Connect to WLAN
+# wifi WLAN
 iwctl --passphrase 'pass' station wlan0 connect 'essid-name'
+# o iwctl --> station wlan0 scan --> station wlan0 connect 'essid-name'
 ```
 ### Partitions
 ```shell
@@ -40,7 +43,7 @@ mount /dev/sda4 /mnt/home
 
 ### Base Arch Install 
 ```shell
-pacstrap /mnt base base-devel linux linux-firmware linux-headers linux-lts networkmanager grub efibootmgr nano vim intel-ucode
+pacstrap /mnt base base-devel linux linux-firmware networkmanager grub efibootmgr nano vim intel-ucode # linux-headers linux-lts 
 # optional: intel-ucode | amd-ucode
 ```
 
@@ -72,12 +75,12 @@ echo KEYMAP=es > /etc/vconsole.conf
 ### Grub
 ```shell
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
-#grub-mkconfig -o /boot/grub/grub.cfg 
-grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg  
 #optional configure video resolution
 nano /etc/default/grub
 # and setting video=1920x1080:
-# GRUB_CMDLINE_LINUX_DEFAULT ="loglevel=3 quiet video=1920x1080"
+# GRUB_CMDLINE_LINUX_DEFAULT ="loglevel=3 quiet video=1920x1080" 
+# or add single for rescue mode
 # And build grub configuration
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -116,9 +119,9 @@ ping -c 3 archlinux.org
 ```
 
 ```shell
-sudo pacman -S reflector rsync
+sudo pacman -S reflector rsync python --noconfirm
 
-sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --verbose --latest 15 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 # Directory structure: Desktop, Documents, Pictures

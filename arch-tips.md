@@ -72,6 +72,7 @@ lspci -k | grep -A 2 -E "(VGA|3D)"
 iwlist wlan0 scan
 iwctl --passphrase 'contraseña' station wlan0 connect 'NombreDeRed'  
 # Opción 2
+nmcli dev wifi list
 nmcli dev wifi con "Wifi Name" password "password"
 ```
 
