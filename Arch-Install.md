@@ -1,6 +1,7 @@
 # Install Arch Linux | Tips
 
 ```shell
+Check UEFI
 ls /sys/firmware/efi/efivars
 localectl list-keymaps
 # ejemplo de teclado en español es
@@ -75,12 +76,14 @@ echo KEYMAP=es > /etc/vconsole.conf
 ### Grub
 ```shell
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+# grub-install --target=x86_64-efi --efi-directory=/efi --removable
 grub-mkconfig -o /boot/grub/grub.cfg  
 #optional configure video resolution
 nano /etc/default/grub
 # and setting video=1920x1080:
 # GRUB_CMDLINE_LINUX_DEFAULT ="loglevel=3 quiet video=1920x1080" 
-# or add single for rescue mode
+# Add 'single' for rescue mode
+# Add 'pci=nocrs', touchpad
 # And build grub configuration
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
